@@ -1,6 +1,6 @@
 use clap::Parser;
-use weather_cli::{run_weather_app, Args, WeatherClient, WeatherError, OutputFormat};
-use weather_cli::models::WaybarOutput;
+use nws_weather::{run_weather_app, Args, WeatherClient, WeatherError, OutputFormat};
+use nws_weather::models::WaybarOutput;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
