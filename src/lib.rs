@@ -5,9 +5,11 @@ pub mod icons;
 pub mod models;
 pub mod output;
 
+// Re-export main types and functions
 pub use client::WeatherClient;
-pub use config::Args;
+pub use config::{Args, TemperatureUnit, IconSet, OutputFormat};
 pub use error::WeatherError;
+pub use models::{Location, WeatherData, WaybarOutput};
 pub use output::create_output;
 
 use std::time::Duration;

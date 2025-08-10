@@ -1,5 +1,5 @@
 use clap::Parser;
-use weather_cli::{run_weather_app, Args, WeatherClient, WeatherError};
+use weather_cli::{run_weather_app, Args, WeatherClient, WeatherError, OutputFormat};
 use weather_cli::models::WaybarOutput;
 
 #[tokio::main]
@@ -21,7 +21,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             eprintln!("Error: {}", e);
             
             // Provide fallback output for Waybar to prevent breaking the bar
-            if matches!(args.format, weather_cli::config::OutputFormat::Waybar) {
+            if matches!(args.format, OutputFormat::Waybar) {
                 let fallback = WaybarOutput {
                     text: "Weather Error".to_string(),
                     tooltip: format!("Failed to get weather data: {}", e),
