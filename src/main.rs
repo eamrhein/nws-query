@@ -1,5 +1,5 @@
 use clap::Parser;
-use nws_weather::{run_weather_app, Args, WeatherClient, WeatherError, OutputFormat};
+use nws_weather::{run_weather_app, Args, WeatherClient, OutputFormat};
 use nws_weather::models::WaybarOutput;
 
 #[tokio::main]
